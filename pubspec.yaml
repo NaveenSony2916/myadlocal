@@ -1,0 +1,82 @@
+name: local
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+
+  # routing
+  auto_route: ^9.3.0+1
+
+  # injection
+  get_it: ^8.0.3
+  injectable: ^2.5.0
+
+  # provider:
+  provider: ^6.1.2
+
+  #utils
+  equatable: ^2.0.7
+  copy_with_extension: ^6.0.1
+  json_annotation: ^4.9.0
+
+  # Reachability
+  connectivity_plus: ^5.0.2
+
+  # Lottie animation
+  lottie: ^3.3.1
+  cached_network_image: ^3.4.1
+  intl: ^0.20.2
+  dio: ^5.7.0
+  encrypt: ^5.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+  build_runner: ^2.4.14
+
+  auto_route_generator: ^9.3.1
+
+  injectable_generator: ^2.7.0
+
+  copy_with_extension_gen: ^6.0.1
+
+  json_serializable: ^6.9.3
+
+  loading_indicator: ^3.1.1
+
+
+# The following section is specific to Flutter packages.
+flutter:
+  generate: true
+
+  assets:
+    - assets/animations/no_internet.json
+    - assets/images/
+    - assets/fonts/
+
+  # Fonts:-
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
