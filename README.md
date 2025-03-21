@@ -5,7 +5,6 @@ This is the basic setup for the flutter with all the required dependencies and f
 # runner_commands
 
 --> dart pub run build_runner build --delete-conflicting-outputs
-
 # To run and generate the localization strings
 
 --> flutter pub run easy_localization:generate --output-dir=lib/foundation/localizations --output-file=localizations.g.dart --format=json --source-dir=assets/translations
