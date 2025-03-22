@@ -8,7 +8,8 @@ class AppText {
   static String next = 'Next';
   static String welcome = 'Welcome';
   static String signup = 'SIGN UP';
-  static String login = 'LOGIN';
+  static String login = 'Login';
+  static String loginWithTouchId = 'Login with Touch ID';
   static String welcomes = 'Hello, nice to\nmeet you!';
   static String signInToContinue = 'Sign in to continue';
   static String enterYourLoginDetails = 'Enter your login details';
@@ -20,6 +21,7 @@ class AppText {
   static String password = 'Password';
   static String newPassword = 'New Password';
   static String confirmNewPassword = 'Confirm New Password';
+  static String rememberPassword = 'Remember password';
   static String forgotPassword = 'Forgot Password?';
   static String doNotHaveAnAccount = 'Don`t have an account ? ';
   static String alreadyHaveAnAccount = 'Already have an account ? ';
@@ -110,6 +112,10 @@ class AppText {
   static String addAddressToProceed = 'Add Address to Proceed';
   static String continues = 'Continue';
   static String apply = 'Apply';
+  static String connect = "or connect with";
+  static String emailAddress = 'Email Address';
+  static String privacyPolicy = 'Term and privacy policy';
+  static String bySigning = 'By signing in you are agreeing our';
   static String remove = 'Remove';
   static String paymentViaCreditCard = 'Payment via credit card';
   static String deliveryDate = 'Delivery Date';

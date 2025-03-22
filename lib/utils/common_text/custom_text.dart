@@ -75,8 +75,8 @@ class CustomText extends StatelessWidget {
         return textTheme.bodyMedium!.copyWith(
           letterSpacing: letterSpacing ?? 0.55,
           height: height,
-          fontSize: 18,
-          color: AppColors.pink,
+          fontSize: fontSize?? 18,
+          color: textColor ?? AppColors.pink,
         );
       case CommonTextType.caption:
         return textTheme.bodySmall!

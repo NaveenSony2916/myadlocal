@@ -15,43 +15,29 @@ class LoginViewModel extends ViewModel<LoginViewModel, LoginViewState> {
   final NavigationService navigationService;
 
   ///
-  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailIdController = TextEditingController();
 
   ///
   final TextEditingController passwordController = TextEditingController();
 
-  ///
-  //final LoginRepository loginRepository;
-
-  ///
- // final SharedPreferenceService preferenceService;
-
   String username = "";
   String password = "";
+  bool rememberPassword = false;
 
   LoginViewModel({
     required this.navigationService,
-   // required this.preferenceService,
-  //  required this.loginRepository,
   }) : super(LoginViewState.init()) {
     init();
   }
 
   ///
   void init() async {
-    ///
-    // listenToConnectivity();
-
-    ///
-    Future.delayed(const Duration(microseconds: 7000), () {
-      debugPrint('Animation Completed');
-    });
-    nameController.addListener(_updateUsername);
+    emailIdController.addListener(_updateUsername);
     passwordController.addListener(_updatePassword);
   }
 
   void _updateUsername() {
-    username = nameController.text;
+    username = emailIdController.text;
     notifyListeners();
   }
 
@@ -60,8 +46,54 @@ class LoginViewModel extends ViewModel<LoginViewModel, LoginViewState> {
     notifyListeners();
   }
 
+  /// Email Validator
+  String? validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Email is required";
+    }
+    final emailRegex = RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+    if (!emailRegex.hasMatch(value)) {
+      return "Enter a valid email";
+    }
+    return null;
+  }
+
+  /// Password Validator
+  String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Password is required";
+    }
+    if (value.length < 6) {
+      return "Password must be at least 6 characters";
+    }
+    return null;
+  }
+
+  bool validateForm() {
+    return formKey.currentState?.validate() ?? false;
+  }
 
   void navigateToHomeScreen() {
-    navigationService.navigateToHomeScreen();
+    if (validateForm()) {
+      navigationService.navigateToHomeScreen();
+    }
+  }
+
+  void submitLogin() {
+    if (validateForm()) {
+      navigateToHomeScreen();
+    }
+  }
+
+  void toggleRememberPassword() {
+    rememberPassword = !rememberPassword;
+    notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    emailIdController.dispose();
+    passwordController.dispose();
+    super.dispose();
   }
 }
