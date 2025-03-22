@@ -164,7 +164,7 @@ class CommonTextField extends StatelessWidget {
         readOnly: readOnly ?? false,
         enabled: enabled,
         obscureText: obscureText ?? false,
-        cursorColor: Colors.redAccent,
+        cursorColor: Colors.grey,
         cursorHeight: 20,
         cursorWidth: 1.5,
         controller: controller,
