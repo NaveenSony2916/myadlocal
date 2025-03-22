@@ -1,18 +1,15 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:local/presentation/view_model/compaign/compaign_view_model.dart';
-import 'package:local/utils/common_color/app_color.dart';
-import 'package:local/utils/common_textfield/common_textfield.dart';
 import 'package:provider/provider.dart';
 import '../../../utils/common_appbar/custom_appbar.dart';
+import '../../../utils/common_color/app_color.dart';
 import '../../../utils/common_text/custom_text.dart';
 import '../../view_model/compaign/compaign_provider.dart';
-import '../../view_model/home/home_provider.dart';
-import '../../view_model/home/home_view_model.dart';
+import '../../view_model/compaign/compaign_view_model.dart';
 
 @RoutePage()
-class CompaignScreen extends StatelessWidget {
-  const CompaignScreen({super.key});
+class LiveCampaignsScreen extends StatelessWidget {
+  const LiveCampaignsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +22,7 @@ class CompaignScreen extends StatelessWidget {
         );
 
         return Scaffold(
-          appBar: CommonAppbar(appBarName: "CAMPAIGN"),
+          appBar: CommonAppbar(appBarName: "LIVE CAMPAIGN"),
           body: ListView.builder(
             itemCount: 3,
             shrinkWrap: true,
@@ -104,10 +101,7 @@ class CompaignScreen extends StatelessWidget {
                                       children: [
                                         CircleAvatar(
                                           minRadius: 5,
-                                          backgroundColor:
-                                              index == 0
-                                                  ? AppColors.green
-                                                  : AppColors.orange,
+                                          backgroundColor: AppColors.yellow,
                                         ),
                                         const SizedBox(width: 2),
                                         Padding(
@@ -119,13 +113,8 @@ class CompaignScreen extends StatelessWidget {
                                           ),
                                           child: Center(
                                             child: CustomText(
-                                              index == 0
-                                                  ? "Approved"
-                                                  : "Pending",
-                                              textColor:
-                                                  index == 0
-                                                      ? AppColors.green
-                                                      : AppColors.orange,
+                                              "Progress",
+                                              textColor: AppColors.yellow,
                                               textAlign: TextAlign.center,
                                               fontSize: 13,
                                               textType: CommonTextType.subtitle,
@@ -154,8 +143,8 @@ class CompaignScreen extends StatelessWidget {
                                 InkWell(
                                   onTap: () {},
                                   child: Image.asset(
-                                    'assets/images/mangaeCam.png',
-                                    height: 50,
+                                    'assets/images/lc.png',
+                                    height: 30,
                                     //  color: Get.appColors.primaryText,
                                   ),
                                 ),

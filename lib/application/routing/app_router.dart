@@ -21,6 +21,9 @@ class AppRouter extends RootStackRouter {
       ],
     ),
     AutoRoute(path: '/login', page: LoginRoute.page),
-
+    AutoRoute(path: '/liveCampaigns', page: LiveCampaignsRoute.page),
+    AutoRoute(path: '/openTickets', page: OpenTicketsRoute.page),
+    AutoRoute(path: '/totalCampaign', page: TotalCampaignRoute.page),
+    AutoRoute(path: '/totalImpressions', page: TotalImpressionsRoute.page),
   ];
 }

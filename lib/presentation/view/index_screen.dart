@@ -92,10 +92,11 @@ class MainScreen extends StatelessWidget {
                                       : Colors.white,
                               child: Icon(
                                 Icons.home,
+                                size: 18,
                                 color:
                                     tabsRoute.activeIndex == 0
                                         ? Colors.white
-                                        : Colors.black,
+                                        : AppColors.appDarkGrey,
                               ),
                             ),
                             label: 'Home',
@@ -107,14 +108,15 @@ class MainScreen extends StatelessWidget {
                                       ? AppColors.appBlue
                                       : Colors.white,
                               child: Icon(
-                                Icons.add_business_rounded,
+                                Icons.menu_book,
+                                size: 18,
                                 color:
                                     tabsRoute.activeIndex == 1
                                         ? Colors.white
-                                        : Colors.black,
+                                        : AppColors.appDarkGrey,
                               ),
                             ),
-                            label: 'Compaign',
+                            label: 'Campaign',
                           ),
                           BottomNavigationBarItem(
                             icon: CircleAvatar(
@@ -123,11 +125,12 @@ class MainScreen extends StatelessWidget {
                                       ? AppColors.appBlue
                                       : Colors.white,
                               child: Icon(
+                                size: 18,
                                 Icons.notification_add,
                                 color:
                                     tabsRoute.activeIndex == 2
                                         ? Colors.white
-                                        : Colors.black,
+                                        : AppColors.appDarkGrey,
                               ),
                             ),
                             label: 'Notifications',
@@ -140,10 +143,11 @@ class MainScreen extends StatelessWidget {
                                       : Colors.white,
                               child: Icon(
                                 Icons.person,
+                                size: 18,
                                 color:
                                     tabsRoute.activeIndex == 3
                                         ? Colors.white
-                                        : Colors.black,
+                                        : AppColors.appDarkGrey,
                               ),
                             ),
                             label: 'Profile',

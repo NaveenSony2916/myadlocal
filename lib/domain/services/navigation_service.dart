@@ -23,12 +23,34 @@ class NavigationService {
   Future<void> navigateToHomeScreen() async {
     appRouter.navigate(const HomeRoute());
   }
+
   ///
   Future<void> navigateToMainScreen() async {
     appRouter.navigate(const MainRoute());
   }
+
   ///
   Future<void> navigateToLoginScreen() async {
     appRouter.navigate(const LoginRoute());
+  }
+
+  ///
+  Future<void> navigationToLiveCampaign() async {
+    appRouter.navigate(const LiveCampaignsRoute());
+  }
+
+  ///
+  Future<void> navigationToOpenTickets() async {
+    appRouter.navigate(const OpenTicketsRoute());
+  }
+
+  ///
+  Future<void> navigationToTotalCampaign() async {
+    appRouter.navigate(const TotalCampaignRoute());
+  }
+
+  ///
+  Future<void> navigationToTotalImpressions() async {
+    appRouter.navigate(const TotalImpressionsRoute());
   }
 }
