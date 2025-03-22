@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local/utils/extention/string_extention.dart';
 
+import '../common_color/app_color.dart';
 import '../common_icon/app_icon.dart';
 import '../common_text/custom_text.dart';
 
@@ -32,7 +33,7 @@ class CommonAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        backgroundColor: const Color(0xFFFB97C9),
+        backgroundColor: AppColors.appBlue,
         centerTitle: true,
         leading: AppIcon(
           icon: Icons.arrow_back_ios,
@@ -40,7 +41,9 @@ class CommonAppbar extends StatelessWidget implements PreferredSizeWidget {
         ),
         title: CustomText(
           appBarName.dataOrEmptyOrNull,
-          textType: CommonTextType.headline,
+
+          textType: CommonTextType.subtitle,
+          textColor: AppColors.white,
         ));
   }
 

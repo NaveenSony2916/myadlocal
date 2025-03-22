@@ -12,15 +12,15 @@ class SplashViewModel extends ViewModel<SplashViewModel, SplashViewState> {
   ///
   final NavigationService navigationService;
 
-  SplashViewModel({
-    required this.navigationService,
-  }) : super(SplashViewState.init()) {
+  SplashViewModel({required this.navigationService})
+    : super(SplashViewState.init()) {
     debugPrint("Call Navigation");
     handleNavigationFromSplashScreen();
   }
   void handleNavigationFromSplashScreen() {
     Future.delayed(const Duration(seconds: 3), () {
-      navigationService.navigateToHomeScreen();
+      navigationService.navigateToMainScreen();
+      //   navigationService.navigateToLoginScreen();
     });
   }
 }

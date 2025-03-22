@@ -37,6 +37,7 @@ dependencies:
   intl: ^0.20.2
   dio: ^5.7.0
   encrypt: ^5.0.3
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

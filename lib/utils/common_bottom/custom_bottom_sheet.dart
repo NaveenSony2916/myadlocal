@@ -25,7 +25,7 @@ Future<void> bottomSheet(BuildContext context,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            content ?? const CustomText('hey welcome'),
+            content ??  CustomText('hey welcome'),
           ],
         ),
       );

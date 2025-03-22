@@ -23,4 +23,12 @@ class NavigationService {
   Future<void> navigateToHomeScreen() async {
     appRouter.navigate(const HomeRoute());
   }
+  ///
+  Future<void> navigateToMainScreen() async {
+    appRouter.navigate(const MainRoute());
+  }
+  ///
+  Future<void> navigateToLoginScreen() async {
+    appRouter.navigate(const LoginRoute());
+  }
 }
