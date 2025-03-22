@@ -19,8 +19,7 @@ class SplashViewModel extends ViewModel<SplashViewModel, SplashViewState> {
   }
   void handleNavigationFromSplashScreen() {
     Future.delayed(const Duration(seconds: 3), () {
-      navigationService.navigateToLoginScreen();
-      //   navigationService.navigateToLoginScreen();
+      // navigationService.navigateToLoginScreen();
     });
   }
 }
