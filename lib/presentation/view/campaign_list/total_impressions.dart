@@ -22,6 +22,7 @@ class TotalImpressionsScreen extends StatelessWidget {
         );
 
         return Scaffold(
+          backgroundColor: Colors.white,
           appBar: CommonAppbar(appBarName: "TOTAL IMPRESSIONS"),
           body: ListView.builder(
             itemCount: 3,

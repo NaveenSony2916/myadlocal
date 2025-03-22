@@ -25,6 +25,7 @@ class CompaignScreen extends StatelessWidget {
         );
 
         return Scaffold(
+          backgroundColor: Colors.white,
           appBar: CommonAppbar(appBarName: "CAMPAIGN"),
           body: ListView.builder(
             itemCount: 3,
@@ -43,15 +44,10 @@ class CompaignScreen extends StatelessWidget {
                         color: AppColors.white,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.blueAccent.withOpacity(
-                              0.1,
-                            ), // Shadow color with opacity
-                            offset: Offset(
-                              0,
-                              1,
-                            ), // Horizontal and vertical offset of the shadow
-                            blurRadius: 0, // Spread of the shadow
-                            spreadRadius: 2, // How much the shadow spreads
+                            color: Colors.blueAccent.withOpacity(0.166),
+                            spreadRadius: 2.2,
+                            blurRadius: 2,
+                            offset: Offset(2, 1.2),
                           ),
                         ],
                         borderRadius: BorderRadius.circular(18),

@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
@@ -109,10 +110,17 @@ class TabViewScreen extends StatelessWidget {
                                     ),
                                     Row(
                                       children: [
-                                        Image.asset(
-                                          'assets/images/notification.png',
-                                          height: 50,
-                                          //  color: Get.appColors.primaryText,
+                                        InkWell(
+                                          onTap: () {
+                                            context.tabsRouter.setActiveIndex(
+                                              2,
+                                            );
+                                          },
+                                          child: Image.asset(
+                                            'assets/images/notification.png',
+                                            height: 50,
+                                            //  color: Get.appColors.primaryText,
+                                          ),
                                         ),
                                         const SizedBox(width: 10),
                                         Stack(
@@ -126,24 +134,32 @@ class TabViewScreen extends StatelessWidget {
                                                 minRadius: 3.85,
                                               ),
                                             ),
-                                            Container(
-                                              width: 45.0,
-                                              height: 45.0,
-                                              decoration: BoxDecoration(
-                                                color: const Color(0xffb7c7df),
-                                                image: const DecorationImage(
-                                                  image: NetworkImage(
-                                                    'http://i.imgur.com/QSev0hg.jpg',
+                                            InkWell(
+                                              onTap: () {
+                                                context.tabsRouter
+                                                    .setActiveIndex(3);
+                                              },
+                                              child: Container(
+                                                width: 45.0,
+                                                height: 45.0,
+                                                decoration: BoxDecoration(
+                                                  color: const Color(
+                                                    0xffb7c7df,
                                                   ),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                                borderRadius:
-                                                    const BorderRadius.all(
-                                                      Radius.circular(50.0),
+                                                  image: const DecorationImage(
+                                                    image: NetworkImage(
+                                                      'http://i.imgur.com/QSev0hg.jpg',
                                                     ),
-                                                border: Border.all(
-                                                  color: AppColors.pink,
-                                                  width: 5.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                  borderRadius:
+                                                      const BorderRadius.all(
+                                                        Radius.circular(50.0),
+                                                      ),
+                                                  border: Border.all(
+                                                    color: AppColors.pink,
+                                                    width: 5.0,
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -783,9 +799,9 @@ class NotificationListView extends StatelessWidget {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.blueAccent.withOpacity(0.166),
-                          spreadRadius: 0.2,
+                          spreadRadius: 2.2,
                           blurRadius: 2,
-                          offset: Offset(2, 1),
+                          offset: Offset(2, 1.2),
                         ),
                       ],
                     ),

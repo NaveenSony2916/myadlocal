@@ -38,6 +38,8 @@ dependencies:
   dio: ^5.7.0
   encrypt: ^5.0.3
   shimmer: ^3.0.0
+  flutter_launcher_icons: ^0.14.3
+
 
 dev_dependencies:
   flutter_test:
@@ -57,6 +59,15 @@ dev_dependencies:
 
   loading_indicator: ^3.1.1
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/playstore.png"
+  image_path_ios: "assets/images/appstore.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/images/playstore.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -68,6 +79,10 @@ flutter:
     - assets/animations/no_internet.json
     - assets/images/
     - assets/fonts/
+    - assets/images/playstore.png
+    - assets/images/appstore.png
+
+
 
   # Fonts:-
   fonts:

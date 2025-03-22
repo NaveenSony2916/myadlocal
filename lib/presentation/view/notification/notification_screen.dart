@@ -22,6 +22,7 @@ class NotificationScreen extends StatelessWidget {
             Provider.of<NotificationViewModel>(context, listen: true);
 
         return Scaffold(
+          backgroundColor: Colors.white,
           appBar: CommonAppbar(appBarName: "NOTIFICATIONS"),
           body: ListView.builder(
             itemCount: 3,
@@ -41,13 +42,9 @@ class NotificationScreen extends StatelessWidget {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.blueAccent.withOpacity(0.166),
-                            spreadRadius: 0.2,
-                            blurRadius: 2,// Shadow color with opacity
-                            offset: Offset(
-                              0,
-                              1,
-                            ), // Horizontal and vertical offset of the shadow
-                          // How much the shadow spreads
+                            spreadRadius: 2.2,
+                            blurRadius: 2,
+                            offset: Offset(2, 1.2),
                           ),
                         ],
                         borderRadius: BorderRadius.circular(18),
@@ -108,7 +105,7 @@ class NotificationScreen extends StatelessWidget {
                               onTap: () {},
                               child: Image.asset(
                                 'assets/images/notification.png',
-                                height: 30,
+                                height: 40,
                                 //  color: Get.appColors.primaryText,
                               ),
                             ),

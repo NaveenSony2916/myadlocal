@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:local/presentation/view_model/profile/profile_provider.dart';
 import 'package:local/presentation/view_model/profile/profile_view_model.dart';
@@ -24,6 +25,7 @@ class ProfileScreen extends StatelessWidget {
         );
 
         return Scaffold(
+          backgroundColor: Colors.white,
           appBar: CommonAppbar(appBarName: "PROFILE"),
           body: SingleChildScrollView(
             child: Column(
@@ -73,9 +75,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 4,
-                    ),
+                    SizedBox(height: 4),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,9 +96,7 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 4,
-                    ),
+                    SizedBox(height: 4),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,23 +143,33 @@ class ProfileScreen extends StatelessWidget {
                             ],
                           ),
                           SizedBox(height: 20),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.notification_add_outlined,
-                                color: AppColors.appBlue,
-                                size: 25,
-                              ),
-                              SizedBox(width: 20),
-                              CustomText(
-                                "Notifications",
-                                textType: CommonTextType.subtitle,
-                                textAlign: TextAlign.start,
-                                textColor: AppColors.appBlue,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16,
-                              ),
-                            ],
+                          InkWell(
+                            onTap: () {
+                              context.tabsRouter.setActiveIndex(2);
+                            },
+                            child: Row(
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    context.tabsRouter.setActiveIndex(2);
+                                  },
+                                  child: Icon(
+                                    Icons.notification_add_outlined,
+                                    color: AppColors.appBlue,
+                                    size: 25,
+                                  ),
+                                ),
+                                SizedBox(width: 20),
+                                CustomText(
+                                  "Notifications",
+                                  textType: CommonTextType.subtitle,
+                                  textAlign: TextAlign.start,
+                                  textColor: AppColors.appBlue,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                ),
+                              ],
+                            ),
                           ),
                           SizedBox(height: 20),
                           Row(

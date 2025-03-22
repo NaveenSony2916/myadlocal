@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
                     Center(
                       child: Image.asset('assets/images/logo.png', height: 100),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 15),
                     CustomText(
                       AppText.welcome,
                       textColor: AppColors.black,
@@ -64,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(color: AppColors.appLightBlue1),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 10),
                     CommonTextField(
                       hintText: AppText.emailAddress,
                       fillColor: AppColors.bgGrey,
@@ -111,10 +111,10 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(height: 20),
                     SizedBox(
-                      width: 150,
-                      height: 50,
+                      width: 130,
+                      height: 45,
                       child: ElevatedButton(
                         onPressed: vm.submitLogin,
                         style: ElevatedButton.styleFrom(
@@ -129,7 +129,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(height: 30),
                     CustomText(
                       AppText.loginWithTouchId,
                       textColor: AppColors.black,
@@ -140,8 +140,8 @@ class LoginScreen extends StatelessWidget {
                     IconButton(
                       icon: Image.asset(
                         'assets/images/icn_fingerprint.png',
-                        height: 70,
-                        width: 70,
+                        height: 60,
+                        width: 60,
                       ),
                       onPressed: () {},
                     ),

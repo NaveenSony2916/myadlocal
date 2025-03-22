@@ -16,7 +16,8 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with TickerProviderStateMixin {
   // First animation controller (scale, opacity, rotation)
   late AnimationController _initialController;
   late Animation<double> _scaleAnimation;
@@ -30,7 +31,6 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   // Flags to control animation states
   bool _showJump = false;
   bool _jumpCompleted = false;
-
 
   ///
   final NavigationService navigationService = injector<NavigationService>();
@@ -86,10 +86,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
         weight: 60,
       ),
     ]).animate(
-      CurvedAnimation(
-        parent: _jumpController,
-        curve: Curves.easeInOut,
-      ),
+      CurvedAnimation(parent: _jumpController, curve: Curves.easeInOut),
     );
 
     _jumpController.addStatusListener((status) {
@@ -122,47 +119,67 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
 
   @override
   Widget build(BuildContext context) {
-    return SplashProvider(builder: (context, child) {
-      final SplashViewModel viewModel =
-      Provider.of<SplashViewModel>(context, listen: true);
+    return SplashProvider(
+      builder: (context, child) {
+        final SplashViewModel viewModel = Provider.of<SplashViewModel>(
+          context,
+          listen: true,
+        );
 
-      return Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+        return Scaffold(
+          backgroundColor: Colors.white,
+          body: Stack(
             children: [
-              _showJump
-                  ? // After initial animation completes, show jumping logo
-              AnimatedBuilder(
-                animation: _jumpController,
-                builder: (context, child) {
-                  return Transform.translate(
-                    offset: Offset(0, _jumpAnimation.value),
-                    child: Image.asset('assets/images/logo.png', height: 120),
-                  );
-                },
-              )
-                  : // During initial animation, show the standard animations
-              AnimatedBuilder(
-                animation: _initialController,
-                builder: (context, child) {
-                  return Transform.rotate(
-                    angle: _rotationAnimation.value,
-                    child: Opacity(
-                      opacity: _opacityAnimation.value,
-                      child: Transform.scale(
-                        scale: _scaleAnimation.value,
-                        child: Image.asset('assets/images/logo.png', height: 120),
-                      ),
-                    ),
-                  );
-                },
+              Image.asset(
+                "assets/images/4.gif",
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.fill,
+              ),
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _showJump
+                        ? // After initial animation completes, show jumping logo
+                        AnimatedBuilder(
+                          animation: _jumpController,
+                          builder: (context, child) {
+                            return Transform.translate(
+                              offset: Offset(0, _jumpAnimation.value),
+                              child: Image.asset(
+                                'assets/images/logo.png',
+                                height: 120,
+                              ),
+                            );
+                          },
+                        )
+                        : // During initial animation, show the standard animations
+                        AnimatedBuilder(
+                          animation: _initialController,
+                          builder: (context, child) {
+                            return Transform.rotate(
+                              angle: _rotationAnimation.value,
+                              child: Opacity(
+                                opacity: _opacityAnimation.value,
+                                child: Transform.scale(
+                                  scale: _scaleAnimation.value,
+                                  child: Image.asset(
+                                    'assets/images/logo.png',
+                                    height: 120,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                  ],
+                ),
               ),
             ],
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 }

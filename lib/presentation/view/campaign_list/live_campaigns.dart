@@ -22,6 +22,7 @@ class LiveCampaignsScreen extends StatelessWidget {
         );
 
         return Scaffold(
+          backgroundColor: Colors.white,
           appBar: CommonAppbar(appBarName: "LIVE CAMPAIGN"),
           body: ListView.builder(
             itemCount: 3,

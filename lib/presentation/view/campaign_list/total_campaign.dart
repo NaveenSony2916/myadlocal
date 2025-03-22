@@ -22,6 +22,7 @@ class TotalCampaignScreen extends StatelessWidget {
         );
 
         return Scaffold(
+          backgroundColor: Colors.white,
           appBar: CommonAppbar(appBarName: "TOTAL CAMPAIGN"),
           body: ListView.builder(
             itemCount: 3,
