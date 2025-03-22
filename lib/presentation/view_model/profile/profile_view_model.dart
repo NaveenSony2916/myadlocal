@@ -21,4 +21,8 @@ class ProfileViewModel extends ViewModel<ProfileViewModel, ProfileViewState> {
   }
 
   init() {}
+
+  void navigateToLoginScreen() {
+    navigationService.navigateToLoginScreen();
+  }
 }

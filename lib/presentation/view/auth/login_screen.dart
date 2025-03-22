@@ -137,13 +137,39 @@ class LoginScreen extends StatelessWidget {
                       fontSize: 14,
                     ),
                     SizedBox(height: 10),
-                    IconButton(
+                 /*   IconButton(
                       icon: Image.asset(
                         'assets/images/icn_fingerprint.png',
                         height: 60,
                         width: 60,
                       ),
                       onPressed: () {},
+                    ),*/
+                    FutureBuilder<bool>(
+                      future: vm.canCheckBiometrics(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return CircularProgressIndicator();
+                        }
+                        if (!snapshot.hasData || !snapshot.data!) {
+                          return CustomText(
+                            "Fingerprint not available",
+                            textColor: AppColors.primaryRed,
+                          );
+                        }
+                        return IconButton(
+                          icon: Image.asset(
+                            'assets/images/icn_fingerprint.png',
+                            height: 60,
+                            width: 60,
+                          ),
+                          onPressed: () {
+                            final loginViewModel = Provider.of<LoginViewModel>(context, listen: false);
+                            loginViewModel.authenticate();
+                          },
+                        );
+                      },
                     ),
                     SizedBox(height: 10),
                     CustomText(

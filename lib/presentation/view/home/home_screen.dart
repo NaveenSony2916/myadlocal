@@ -180,11 +180,17 @@ class TabViewScreen extends StatelessWidget {
                                       textColor: AppColors.appDarkGrey,
                                       fontSize: 16,
                                     ),
-                                    CustomText(
-                                      "View all",
-                                      textType: CommonTextType.subtitle,
-                                      textColor: AppColors.appBlue,
-                                      fontSize: 14,
+                                    InkWell(
+                                      onTap: () {
+                                        context.tabsRouter
+                                            .setActiveIndex(1);
+                                      },
+                                      child: CustomText(
+                                        "View all",
+                                        textType: CommonTextType.subtitle,
+                                        textColor: AppColors.appBlue,
+                                        fontSize: 14,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -691,11 +697,17 @@ class NotificationListView extends StatelessWidget {
                 textColor: Colors.black,
                 fontSize: 16,
               ),
-              CustomText(
-                "View all",
-                textType: CommonTextType.subtitle,
-                textColor: AppColors.appBlue,
-                fontSize: 16,
+              InkWell(
+                onTap: () {
+                  context.tabsRouter
+                      .setActiveIndex(2);
+                },
+                child: CustomText(
+                  "View all",
+                  textType: CommonTextType.subtitle,
+                  textColor: AppColors.appBlue,
+                  fontSize: 16,
+                ),
               ),
             ],
           ),
@@ -743,7 +755,7 @@ class NotificationListView extends StatelessWidget {
                                 backgroundColor:
                                     index == 1
                                         ? AppColors.green
-                                        : AppColors.black,
+                                        : AppColors.primaryRed,
                               )
                               : const SizedBox(),
                           const SizedBox(width: 2),

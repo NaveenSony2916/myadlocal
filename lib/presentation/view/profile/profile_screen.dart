@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
     return ProfileProvider(
       builder: (context, child) {
         ///
-        final ProfileViewModel viewModel = Provider.of<ProfileViewModel>(
+        final ProfileViewModel vm = Provider.of<ProfileViewModel>(
           context,
           listen: true,
         );
@@ -172,23 +172,28 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ),
                           SizedBox(height: 20),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.logout,
-                                color: AppColors.appBlue,
-                                size: 25,
-                              ),
-                              SizedBox(width: 20),
-                              CustomText(
-                                "Logout",
-                                textType: CommonTextType.subtitle,
-                                textAlign: TextAlign.start,
-                                textColor: AppColors.appBlue,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16,
-                              ),
-                            ],
+                          InkWell(
+                            onTap: () {
+                              vm.navigateToLoginScreen();
+                            },
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.logout,
+                                  color: AppColors.appBlue,
+                                  size: 25,
+                                ),
+                                SizedBox(width: 20),
+                                CustomText(
+                                  "Logout",
+                                  textType: CommonTextType.subtitle,
+                                  textAlign: TextAlign.start,
+                                  textColor: AppColors.appBlue,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),

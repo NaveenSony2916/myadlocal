@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:local_auth/local_auth.dart';
 import '../../../../domain/services/navigation_service.dart';
 import '../../../../foundation/abstracts/base_view_model.dart';
 import 'login_view_state.dart';
@@ -20,13 +22,14 @@ class LoginViewModel extends ViewModel<LoginViewModel, LoginViewState> {
   ///
   final TextEditingController passwordController = TextEditingController();
 
+  final LocalAuthentication localAuth = LocalAuthentication();
+
   String username = "";
   String password = "";
   bool rememberPassword = false;
 
-  LoginViewModel({
-    required this.navigationService,
-  }) : super(LoginViewState.init()) {
+  LoginViewModel({required this.navigationService})
+    : super(LoginViewState.init()) {
     init();
   }
 
@@ -34,6 +37,7 @@ class LoginViewModel extends ViewModel<LoginViewModel, LoginViewState> {
   void init() async {
     emailIdController.addListener(_updateUsername);
     passwordController.addListener(_updatePassword);
+    authenticate();
   }
 
   void _updateUsername() {
@@ -51,7 +55,9 @@ class LoginViewModel extends ViewModel<LoginViewModel, LoginViewState> {
     if (value == null || value.isEmpty) {
       return "Email is required";
     }
-    final emailRegex = RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+    final emailRegex = RegExp(
+      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+    );
     if (!emailRegex.hasMatch(value)) {
       return "Enter a valid email";
     }
@@ -95,5 +101,40 @@ class LoginViewModel extends ViewModel<LoginViewModel, LoginViewState> {
     emailIdController.dispose();
     passwordController.dispose();
     super.dispose();
+  }
+
+  /// **Check if device supports biometrics**
+  Future<bool> canCheckBiometrics() async {
+    return await localAuth.canCheckBiometrics;
+
+  }
+
+  /// **Authenticate with fingerprint**
+  Future<void> authenticate() async {
+    bool isAuthenticated = false;
+    try {
+      isAuthenticated = await localAuth.authenticate(
+        localizedReason: 'Use fingerprint to log in',
+        options: const AuthenticationOptions(
+          biometricOnly: true,
+          stickyAuth: true,
+          useErrorDialogs: true,
+        ),
+      );
+    } on PlatformException catch (e) {
+      debugPrint("Fingerprint Auth Error: ${e.message}");
+    }
+
+    if (isAuthenticated) {
+      onSuccessfulAuth();
+    }
+  }
+
+
+  /// **Handle successful authentication**
+  void onSuccessfulAuth() {
+    debugPrint("Fingerprint Authentication Successful!");
+    navigationService.navigateToHomeScreen();
+    // Navigate to the home screen or perform login
   }
 }
