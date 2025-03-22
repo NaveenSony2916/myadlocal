@@ -24,29 +24,37 @@ class ProfileScreen extends StatelessWidget {
         );
 
         return Scaffold(
-          appBar: CommonAppbar(appBarName: "ProfileScreen"),
+          appBar: CommonAppbar(appBarName: "PROFILE"),
           body: SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 28.0),
-                      child: CircleAvatar(
-                        maxRadius: 40,
-                        backgroundColor: AppColors.appBlue,
-                        child: Icon(
-                          Icons.person,
-                          color: AppColors.white,
-                          size: 80,
+                      child: Container(
+                        width: 85.0,
+                        height: 85.0,
+                        decoration: BoxDecoration(
+                          color: const Color(0xffb7c7df),
+                          image: const DecorationImage(
+                            image: NetworkImage(
+                              'http://i.imgur.com/QSev0hg.jpg',
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(50.0),
+                          ),
+                          border: Border.all(color: AppColors.pink, width: 5.0),
                         ),
                       ),
                     ),
                     SizedBox(height: 20),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
@@ -57,7 +65,7 @@ class ProfileScreen extends StatelessWidget {
                           fontSize: 14,
                         ),
                         CustomText(
-                          "NA",
+                          " xxxxxxxxxxxx",
                           textType: CommonTextType.subtitle,
                           textAlign: TextAlign.right,
                           textColor: AppColors.black,
@@ -65,8 +73,11 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 4,
+                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
@@ -77,7 +88,7 @@ class ProfileScreen extends StatelessWidget {
                           fontSize: 14,
                         ),
                         CustomText(
-                          "xxxxxxxxxxxx",
+                          " xxxxxxxxxxxx",
                           textType: CommonTextType.subtitle,
                           textAlign: TextAlign.right,
                           textColor: AppColors.black,
@@ -85,8 +96,11 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 4,
+                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CustomText(
@@ -97,7 +111,7 @@ class ProfileScreen extends StatelessWidget {
                           fontSize: 14,
                         ),
                         CustomText(
-                          "xxxxxxxxxxxx",
+                          " xxxxxxxxxxxx",
                           textType: CommonTextType.subtitle,
                           textAlign: TextAlign.right,
                           textColor: AppColors.black,
@@ -105,60 +119,73 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    SizedBox(height: 40),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.password,
+                                color: AppColors.appBlue,
+                                size: 25,
+                              ),
+                              SizedBox(width: 20),
+                              CustomText(
+                                "Change Password",
+                                textType: CommonTextType.subtitle,
+                                textAlign: TextAlign.start,
+                                textColor: AppColors.appBlue,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 20),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.notification_add_outlined,
+                                color: AppColors.appBlue,
+                                size: 25,
+                              ),
+                              SizedBox(width: 20),
+                              CustomText(
+                                "Notifications",
+                                textType: CommonTextType.subtitle,
+                                textAlign: TextAlign.start,
+                                textColor: AppColors.appBlue,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 20),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.logout,
+                                color: AppColors.appBlue,
+                                size: 25,
+                              ),
+                              SizedBox(width: 20),
+                              CustomText(
+                                "Logout",
+                                textType: CommonTextType.subtitle,
+                                textAlign: TextAlign.start,
+                                textColor: AppColors.appBlue,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
-                ),
-                SizedBox(height: 150),
-                Container(
-                  width: double.infinity,
-                  height: 300,
-                  padding: EdgeInsets.symmetric(vertical: 50, horizontal: 60),
-                  decoration: BoxDecoration(
-                    //color: AppColors.purple,
-                    gradient: LinearGradient(
-                      colors: [AppColors.appBlue, AppColors.appLightBlue],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(80),
-                      topLeft: Radius.circular(80),
-                    ),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.password, color: Colors.white, size: 25),
-                          SizedBox(width: 20),
-                          CustomText(
-                            "Change Password",
-                            textType: CommonTextType.subtitle,
-                            textAlign: TextAlign.start,
-                            textColor: Colors.white,
-                            fontWeight: FontWeight.w800,
-                            fontSize: 20,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 20),
-                      Row(
-                        children: [
-                          Icon(Icons.logout, color: Colors.white, size: 25),
-                          SizedBox(width: 20),
-                          CustomText(
-                            "Logout",
-                            textType: CommonTextType.subtitle,
-                            textAlign: TextAlign.start,
-                            textColor: Colors.white,
-                            fontWeight: FontWeight.w800,
-                            fontSize: 20,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
                 ),
               ],
             ),

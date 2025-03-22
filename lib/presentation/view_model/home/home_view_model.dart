@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../domain/services/connectivity_service.dart';
+import '../../../domain/services/navigation_service.dart';
 import '../../../foundation/abstracts/base_view_model.dart';
 import '../../../utils/helper/validator.dart';
 import 'home_view_state.dart';
@@ -10,7 +11,9 @@ class HomeViewModel extends ViewModel<HomeViewModel, HomeViewState> {
   ///
   final GlobalKey<ScaffoldState> key = GlobalKey<ScaffoldState>();
 
-  HomeViewModel() : super(HomeViewState.init()) {
+  ///
+  final NavigationService navigationService;
+  HomeViewModel(this.navigationService) : super(HomeViewState.init()) {
     init();
   }
 
@@ -30,5 +33,19 @@ class HomeViewModel extends ViewModel<HomeViewModel, HomeViewState> {
     return ValidatorUtils.firstNameValidator(value: value).message;
   }
 
-  void handleNavigationFromSplashScreen() {}
+  void navigationToLiveCampaign() {
+    navigationService.navigationToLiveCampaign();
+  }
+
+  void navigationToOpenTickets() {
+    navigationService.navigationToOpenTickets();
+  }
+
+  void navigationToTotalCampaign() {
+    navigationService.navigationToTotalCampaign();
+  }
+
+  void navigationToTotalImpressions() {
+    navigationService.navigationToTotalImpressions();
+  }
 }

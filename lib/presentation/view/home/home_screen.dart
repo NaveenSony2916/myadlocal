@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TabViewScreen(),
-                CompaignView(),
+                CampaignView(),
                 NotificationListView(),
               ],
             ),
@@ -233,7 +233,7 @@ class TabViewScreen extends StatelessWidget {
                                       children: [
                                         Image.asset(
                                           'assets/images/message.png',
-                                          height: 50,
+                                          height: 35,
                                           //  color: Get.appColors.primaryText,
                                         ),
                                         Column(
@@ -243,9 +243,9 @@ class TabViewScreen extends StatelessWidget {
                                               CrossAxisAlignment.start,
                                           children: [
                                             CustomText(
-                                              "Diaas Tst Bank",
+                                              "Phoneix Market City",
                                               textType: CommonTextType.headline,
-                                              fontSize: 14,
+                                              fontSize: 15.55,
                                               textColor:
                                                   index == 0
                                                       ? Colors.white
@@ -257,57 +257,86 @@ class TabViewScreen extends StatelessWidget {
                                             CustomText(
                                               "Location : UK",
                                               textType: CommonTextType.subtitle,
-                                              fontSize: 14,
-                                                 textColor: index == 0
-                                                    ? Colors.white
-                                                   : Colors.grey,
+                                              fontSize: 12,
+                                              textColor:
+                                                  index == 0
+                                                      ? Colors.white
+                                                      : Colors.grey,
+                                            ),
+                                            const SizedBox(height: 5),
+                                            CustomText(
+                                              "Duration : 16 Days",
+                                              textType: CommonTextType.headline,
+                                              fontSize: 13,
+                                              textColor:
+                                                  index == 0
+                                                      ? Colors.white
+                                                      : Colors.grey,
+                                            ),
+                                            const SizedBox(height: 5),
+                                            CustomText(
+                                              "Date Booked : 03 Feb 2025",
+                                              textType: CommonTextType.subtitle,
+                                              fontSize: 12,
+                                              textColor:
+                                                  index == 0
+                                                      ? Colors.white
+                                                      : Colors.grey,
+                                            ),
+                                            const SizedBox(height: 5),
+                                            CustomText(
+                                              "03 Mar 2025 : 20 Mar 2025",
+                                              textType: CommonTextType.headline,
+                                              fontSize: 13,
+                                              textColor:
+                                                  index == 0
+                                                      ? Colors.white
+                                                      : Colors.grey,
+                                            ),
+                                            const SizedBox(height: 5),
+                                            Row(
+                                              children: [
+                                                CircleAvatar(
+                                                  minRadius: 5,
+                                                  backgroundColor:
+                                                      index == 1
+                                                          ? AppColors.green
+                                                          : AppColors.orange,
+                                                ),
+                                                const SizedBox(width: 2),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                        top: 1.0,
+                                                        bottom: 1,
+                                                        left: 10,
+                                                        right: 11,
+                                                      ),
+                                                  child: Center(
+                                                    child: CustomText(
+                                                      "Pending",
+                                                      textColor:
+                                                          index == 0
+                                                              ? AppColors.orange
+                                                              : AppColors.grey,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      fontSize: 13,
+                                                      textType:
+                                                          CommonTextType
+                                                              .subtitle,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ],
                                         ),
                                         Image.asset(
                                           'assets/images/pdf.png',
-                                          height: 30,
+                                          height: 20,
                                           //  color: Get.appColors.primaryText,
                                         ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 8.0),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              CustomText(
-                                                "Monday,27 Oct 2024 ",
-                                                textType:
-                                                    CommonTextType.subtitle,
-                                                textColor:
-                                                    index == 0
-                                                        ? Colors.white
-                                                        : Colors.black,
-                                                 fontSize: 12,
-                                              ),
-                                              const SizedBox(height: 5),
-                                              CustomText(
-                                                "08.00 am - 10.00 am",
-                                                textType: CommonTextType.button,
-                                                textColor:
-                                                    index == 0
-                                                        ? Colors.white
-                                                        : Colors.grey,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        const SizedBox(width: 15),
                                       ],
                                     ),
                                   ],
@@ -323,7 +352,7 @@ class TabViewScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 1.0),
                   child: Container(
-                    height: 110,
+                    height: 100,
                     width: 100,
                     decoration: const BoxDecoration(
                       color: Colors.white12,
@@ -339,8 +368,8 @@ class TabViewScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 74, bottom: 1.0),
               child: Container(
-                height: 115,
-                width: 100,
+                height: 105,
+                width: 120,
                 decoration: const BoxDecoration(
                   color: Colors.white10,
                   borderRadius: BorderRadius.only(
@@ -357,8 +386,8 @@ class TabViewScreen extends StatelessWidget {
   }
 }
 
-class CompaignView extends StatelessWidget {
-  const CompaignView({super.key});
+class CampaignView extends StatelessWidget {
+  const CampaignView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -376,7 +405,7 @@ class CompaignView extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  // vm.navigateToLicenseListScreen(context);
+                  vm.navigationToLiveCampaign();
                 },
                 child: Container(
                   height: 100,
@@ -430,7 +459,9 @@ class CompaignView extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  vm.navigationToTotalCampaign();
+                },
                 child: Container(
                   height: 100,
                   width: width / 2.3,
@@ -448,7 +479,7 @@ class CompaignView extends StatelessWidget {
                   ),
                   child: InkWell(
                     onTap: () {
-                      // vm.navigationToBankSuperVisionScreen(context);
+                      vm.navigationToTotalCampaign();
                     },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -500,7 +531,7 @@ class CompaignView extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  // vm.navigateToLicenseListScreen(context);
+                  vm.navigationToTotalImpressions();
                 },
                 child: Container(
                   height: 100,
@@ -554,7 +585,9 @@ class CompaignView extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  vm.navigationToOpenTickets();
+                },
                 child: Container(
                   height: 100,
                   width: width / 2.3,
@@ -572,7 +605,7 @@ class CompaignView extends StatelessWidget {
                   ),
                   child: InkWell(
                     onTap: () {
-                      // vm.navigationToBankSuperVisionScreen(context);
+                      vm.navigationToOpenTickets();
                     },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -749,10 +782,10 @@ class NotificationListView extends StatelessWidget {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.166),
+                          color: Colors.blueAccent.withOpacity(0.166),
                           spreadRadius: 0.2,
-                          blurRadius: 0.2,
-                          offset: const Offset(0.5, 0.5),
+                          blurRadius: 2,
+                          offset: Offset(2, 1),
                         ),
                       ],
                     ),
