@@ -37,7 +37,7 @@ class LoginViewModel extends ViewModel<LoginViewModel, LoginViewState> {
   void init() async {
     emailIdController.addListener(_updateUsername);
     passwordController.addListener(_updatePassword);
-    authenticate();
+   // authenticate();
   }
 
   void _updateUsername() {

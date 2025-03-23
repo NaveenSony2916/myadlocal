@@ -1,3 +1,5 @@
+import 'package:android_intent_plus/android_intent.dart';
+import 'package:android_intent_plus/flag.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:local/utils/app_text/app_text.dart';
@@ -137,7 +139,7 @@ class LoginScreen extends StatelessWidget {
                       fontSize: 14,
                     ),
                     SizedBox(height: 10),
-                 /*   IconButton(
+                    /*   IconButton(
                       icon: Image.asset(
                         'assets/images/icn_fingerprint.png',
                         height: 60,
@@ -153,9 +155,19 @@ class LoginScreen extends StatelessWidget {
                           return CircularProgressIndicator();
                         }
                         if (!snapshot.hasData || !snapshot.data!) {
-                          return CustomText(
-                            "Fingerprint not available",
-                            textColor: AppColors.primaryRed,
+                          return InkWell(
+                            onTap: () async {
+                              final intent = AndroidIntent(
+                                action: 'android.settings.SECURITY_SETTINGS',
+                                flags: <int>[Flag.FLAG_ACTIVITY_NEW_TASK],
+                              );
+                              await intent.launch();
+                            },
+                            child: Icon(
+                              Icons.lock_outline,
+                              size: 35,
+                              color: AppColors.primaryBlue,
+                            ),
                           );
                         }
                         return IconButton(
@@ -165,7 +177,10 @@ class LoginScreen extends StatelessWidget {
                             width: 60,
                           ),
                           onPressed: () {
-                            final loginViewModel = Provider.of<LoginViewModel>(context, listen: false);
+                            final loginViewModel = Provider.of<LoginViewModel>(
+                              context,
+                              listen: false,
+                            );
                             loginViewModel.authenticate();
                           },
                         );
