@@ -1,6 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:widget_and_text_animator/widget_and_text_animator.dart';
 import '../../../utils/common_appbar/custom_appbar.dart';
 import '../../../utils/common_color/app_color.dart';
 import '../../../utils/common_text/custom_text.dart';
@@ -141,12 +142,15 @@ class OpenTicketsScreen extends StatelessWidget {
                                   fontSize: 13,
                                   textColor: AppColors.appBlue,
                                 ),
-                                InkWell(
-                                  onTap: () {},
-                                  child: Image.asset(
-                                    'assets/images/oc.png',
-                                    height: 30,
-                                    //  color: Get.appColors.primaryText,
+                                WidgetAnimator(
+                                  atRestEffect: WidgetRestingEffects.size(),
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Image.asset(
+                                      'assets/images/oc.png',
+                                      height: 30,
+                                      //  color: Get.appColors.primaryText,
+                                    ),
                                   ),
                                 ),
                               ],

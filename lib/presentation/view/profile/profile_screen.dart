@@ -66,7 +66,7 @@ class ProfileScreen extends StatelessWidget {
 
                       // Profile Info
                       Positioned(
-                        top: 100,
+                        top: 80,
                         left: 40,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

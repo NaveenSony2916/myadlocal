@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:local/utils/app_text/app_text.dart';
 import 'package:local/utils/common_textfield/common_textfield.dart';
 import 'package:provider/provider.dart';
+import 'package:widget_and_text_animator/widget_and_text_animator.dart';
 import '../../../utils/common_color/app_color.dart';
 import '../../../utils/common_text/custom_text.dart';
 import '../../../utils/custom_checkbox/custom_checkbox.dart';
@@ -36,8 +37,14 @@ class LoginScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: 50),
-                    Center(
-                      child: Image.asset('assets/images/logo.png', height: 100),
+                    WidgetAnimator(
+                      atRestEffect: WidgetRestingEffects.swing(),
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                          height: 100,
+                        ),
+                      ),
                     ),
                     SizedBox(height: 15),
                     CustomText(

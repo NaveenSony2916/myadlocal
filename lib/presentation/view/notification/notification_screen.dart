@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:local/presentation/view_model/notification/notification_provider.dart';
 import 'package:local/presentation/view_model/notification/notification_view_model.dart';
 import 'package:provider/provider.dart';
+import 'package:widget_and_text_animator/widget_and_text_animator.dart';
 import '../../../utils/common_appbar/custom_appbar.dart';
 import '../../../utils/common_color/app_color.dart';
 import '../../../utils/common_text/custom_text.dart';
@@ -103,10 +104,13 @@ class NotificationScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: InkWell(
                               onTap: () {},
-                              child: Image.asset(
-                                'assets/images/notification.png',
-                                height: 40,
-                                //  color: Get.appColors.primaryText,
+                              child: WidgetAnimator(
+                                atRestEffect: WidgetRestingEffects.swing(),
+                                child: Image.asset(
+                                  'assets/images/notification.png',
+                                  height: 40,
+                                  //  color: Get.appColors.primaryText,
+                                ),
                               ),
                             ),
                           ),
