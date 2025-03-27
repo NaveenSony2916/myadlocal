@@ -4,6 +4,7 @@ import 'package:local/presentation/view_model/compaign/compaign_view_model.dart'
 import 'package:local/utils/common_color/app_color.dart';
 import 'package:local/utils/common_textfield/common_textfield.dart';
 import 'package:provider/provider.dart';
+import 'package:widget_and_text_animator/widget_and_text_animator.dart';
 import '../../../utils/common_appbar/custom_appbar.dart';
 import '../../../utils/common_text/custom_text.dart';
 import '../../view_model/compaign/compaign_provider.dart';
@@ -149,10 +150,15 @@ class CompaignScreen extends StatelessWidget {
                                 ),
                                 InkWell(
                                   onTap: () {},
-                                  child: Image.asset(
-                                    'assets/images/mangaeCam.png',
-                                    height: 50,
-                                    //  color: Get.appColors.primaryText,
+                                  child: WidgetAnimator(
+                                    incomingEffect:
+                                        WidgetTransitionEffects.incomingSlideInFromBottom(),
+                                    atRestEffect: WidgetRestingEffects.swing(),
+                                    child: Image.asset(
+                                      'assets/images/mangaeCam.png',
+                                      height: 50,
+                                      //  color: Get.appColors.primaryText,
+                                    ),
                                   ),
                                 ),
                               ],

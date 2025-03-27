@@ -130,12 +130,19 @@ class _SplashScreenState extends State<SplashScreen>
           backgroundColor: Colors.white,
           body: Stack(
             children: [
-              Image.asset(
-                "assets/images/4.gif",
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.fill,
+              ColorFiltered(
+                colorFilter: ColorFilter.mode(
+                  Colors.white.withOpacity(0.3), // Adjust dullness
+                  BlendMode.dstATop,
+                ),
+                child: Image.asset(
+                  "assets/images/2.gif",
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  fit: BoxFit.contain,
+                ),
               ),
+
               Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

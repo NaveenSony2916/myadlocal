@@ -38,7 +38,8 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     SizedBox(height: 50),
                     WidgetAnimator(
-                      atRestEffect: WidgetRestingEffects.swing(),
+                      atRestEffect: WidgetRestingEffects.dangle(),
+
                       child: Center(
                         child: Image.asset(
                           'assets/images/logo.png',
@@ -177,19 +178,23 @@ class LoginScreen extends StatelessWidget {
                             ),
                           );
                         }
-                        return IconButton(
-                          icon: Image.asset(
-                            'assets/images/icn_fingerprint.png',
-                            height: 60,
-                            width: 60,
+                        return WidgetAnimator(
+                          atRestEffect: WidgetRestingEffects.size(),
+                          child: IconButton(
+                            icon: Image.asset(
+                              'assets/images/icn_fingerprint.png',
+                              height: 60,
+                              width: 60,
+                            ),
+                            onPressed: () {
+                              final loginViewModel =
+                                  Provider.of<LoginViewModel>(
+                                    context,
+                                    listen: false,
+                                  );
+                              loginViewModel.authenticate();
+                            },
                           ),
-                          onPressed: () {
-                            final loginViewModel = Provider.of<LoginViewModel>(
-                              context,
-                              listen: false,
-                            );
-                            loginViewModel.authenticate();
-                          },
                         );
                       },
                     ),
