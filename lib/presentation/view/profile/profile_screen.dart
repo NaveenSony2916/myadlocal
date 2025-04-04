@@ -80,12 +80,21 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: 10),
-                            Text(
-                              " +91 9069754534",
-                              style: TextStyle(
-                                color: Colors.white70,
-                                fontSize: 14,
-                              ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.call,
+                                  color: Colors.white70,
+                                  size: 15,
+                                ),
+                                Text(
+                                  " +91 9069754534",
+                                  style: TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ],
                             ),
                             Text(
                               " No D 171, Anna Nagar East, Chennai ...",
@@ -114,12 +123,7 @@ class ProfileScreen extends StatelessWidget {
                                 height: 85.0,
                                 decoration: BoxDecoration(
                                   color: const Color(0xffb7c7df),
-                                  image: const DecorationImage(
-                                    image: NetworkImage(
-                                      'http://i.imgur.com/QSev0hg.jpg',
-                                    ),
-                                    fit: BoxFit.cover,
-                                  ),
+
                                   borderRadius: const BorderRadius.all(
                                     Radius.circular(50.0),
                                   ),
@@ -127,6 +131,11 @@ class ProfileScreen extends StatelessWidget {
                                     color: AppColors.white,
                                     width: 5.0,
                                   ),
+                                ),
+                                child: Icon(
+                                  Icons.person,
+                                  color: Colors.cyan,
+                                  size: 40,
                                 ),
                               ),
                             ),

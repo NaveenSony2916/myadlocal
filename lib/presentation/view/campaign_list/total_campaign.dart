@@ -142,15 +142,12 @@ class TotalCampaignScreen extends StatelessWidget {
                                   fontSize: 13,
                                   textColor: AppColors.appBlue,
                                 ),
-                                WidgetAnimator(
-                                  atRestEffect: WidgetRestingEffects.size(),
-                                  child: InkWell(
-                                    onTap: () {},
-                                    child: Image.asset(
-                                      'assets/images/ot.png',
-                                      height: 40,
-                                      //  color: Get.appColors.primaryText,
-                                    ),
+                                InkWell(
+                                  onTap: () {},
+                                  child: Image.asset(
+                                    'assets/images/ot.png',
+                                    height: 40,
+                                    //  color: Get.appColors.primaryText,
                                   ),
                                 ),
                               ],

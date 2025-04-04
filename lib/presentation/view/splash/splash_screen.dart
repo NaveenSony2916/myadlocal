@@ -130,7 +130,7 @@ class _SplashScreenState extends State<SplashScreen>
           backgroundColor: Colors.white,
           body: Stack(
             children: [
-              ColorFiltered(
+            /*  ColorFiltered(
                 colorFilter: ColorFilter.mode(
                   Colors.white.withOpacity(0.3), // Adjust dullness
                   BlendMode.dstATop,
@@ -141,7 +141,7 @@ class _SplashScreenState extends State<SplashScreen>
                   width: MediaQuery.of(context).size.width,
                   fit: BoxFit.contain,
                 ),
-              ),
+              ),*/
 
               Center(
                 child: Column(

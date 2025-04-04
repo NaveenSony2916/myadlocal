@@ -142,15 +142,12 @@ class LiveCampaignsScreen extends StatelessWidget {
                                   fontSize: 13,
                                   textColor: AppColors.appBlue,
                                 ),
-                                WidgetAnimator(
-                                  atRestEffect: WidgetRestingEffects.size(),
-                                  child: InkWell(
-                                    onTap: () {},
-                                    child: Image.asset(
-                                      'assets/images/lc.png',
-                                      height: 30,
-                                      //  color: Get.appColors.primaryText,
-                                    ),
+                                InkWell(
+                                  onTap: () {},
+                                  child: Image.asset(
+                                    'assets/images/lc.png',
+                                    height: 30,
+                                    //  color: Get.appColors.primaryText,
                                   ),
                                 ),
                               ],

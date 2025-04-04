@@ -117,39 +117,35 @@ class TabViewScreen extends StatelessWidget {
                                               2,
                                             );
                                           },
-                                          child: WidgetAnimator(
-                                            atRestEffect:
-                                                WidgetRestingEffects.swing(),
-                                            child: Stack(
-                                              children: [
-                                                Image.asset(
-                                                  'assets/images/notification.png',
-                                                  height: 50,
-                                                  //  color: Get.appColors.primaryText,
-                                                ),
-                                                Positioned(
-                                                  right:
-                                                      -0, // Adjust position to align top-right
-                                                  top: -0,
-                                                  child: CircleAvatar(
-                                                    backgroundColor:
-                                                        Colors.pinkAccent,
-                                                    minRadius: 8,
-                                                    child: Text(
-                                                      // notifyCount.toString(),
-                                                      //   notifyCount.toString(),
-                                                      "3",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 10,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                          child: Stack(
+                                            children: [
+                                              Image.asset(
+                                                'assets/images/notification.png',
+                                                height: 50,
+                                                //  color: Get.appColors.primaryText,
+                                              ),
+                                              Positioned(
+                                                right:
+                                                    -0, // Adjust position to align top-right
+                                                top: -0,
+                                                child: CircleAvatar(
+                                                  backgroundColor:
+                                                      Colors.pinkAccent,
+                                                  minRadius: 8,
+                                                  child: Text(
+                                                    // notifyCount.toString(),
+                                                    //   notifyCount.toString(),
+                                                    "3",
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 10,
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                     ),
                                                   ),
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                         const SizedBox(width: 10),
@@ -176,12 +172,7 @@ class TabViewScreen extends StatelessWidget {
                                                   color: const Color(
                                                     0xffb7c7df,
                                                   ),
-                                                  image: const DecorationImage(
-                                                    image: NetworkImage(
-                                                      'http://i.imgur.com/QSev0hg.jpg',
-                                                    ),
-                                                    fit: BoxFit.cover,
-                                                  ),
+
                                                   borderRadius:
                                                       const BorderRadius.all(
                                                         Radius.circular(50.0),
@@ -190,6 +181,11 @@ class TabViewScreen extends StatelessWidget {
                                                     color: AppColors.pink,
                                                     width: 5.0,
                                                   ),
+                                                ),
+                                                child: Icon(
+                                                  Icons.person,
+                                                  color: Colors.black,
+                                                  size: 25,
                                                 ),
                                               ),
                                             ),
@@ -491,13 +487,10 @@ class CampaignView extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          WidgetAnimator(
-                            atRestEffect: WidgetRestingEffects.size(),
-                            child: Image.asset(
-                              'assets/images/lc.png',
-                              height: 30,
-                              //  color: Get.appColors.primaryText,
-                            ),
+                          Image.asset(
+                            'assets/images/lc.png',
+                            height: 30,
+                            //  color: Get.appColors.primaryText,
                           ),
                           CustomText(
                             "01",
@@ -557,13 +550,10 @@ class CampaignView extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            WidgetAnimator(
-                              atRestEffect: WidgetRestingEffects.size(),
-                              child: Image.asset(
-                                'assets/images/ot.png',
-                                height: 35,
-                                //  color: Get.appColors.primaryText,
-                              ),
+                            Image.asset(
+                              'assets/images/ot.png',
+                              height: 35,
+                              //  color: Get.appColors.primaryText,
                             ),
                             CustomText(
                               "21",
@@ -623,13 +613,10 @@ class CampaignView extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          WidgetAnimator(
-                            atRestEffect: WidgetRestingEffects.size(),
-                            child: Image.asset(
-                              'assets/images/tm.png',
-                              height: 30,
-                              //  color: Get.appColors.primaryText,
-                            ),
+                          Image.asset(
+                            'assets/images/tm.png',
+                            height: 30,
+                            //  color: Get.appColors.primaryText,
                           ),
                           CustomText(
                             "21",
@@ -689,13 +676,10 @@ class CampaignView extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            WidgetAnimator(
-                              atRestEffect: WidgetRestingEffects.size(),
-                              child: Image.asset(
-                                'assets/images/oc.png',
-                                height: 25,
-                                //  color: Get.appColors.primaryText,
-                              ),
+                            Image.asset(
+                              'assets/images/oc.png',
+                              height: 25,
+                              //  color: Get.appColors.primaryText,
                             ),
                             CustomText(
                               "21",

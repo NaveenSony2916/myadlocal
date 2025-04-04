@@ -104,13 +104,10 @@ class NotificationScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: InkWell(
                               onTap: () {},
-                              child: WidgetAnimator(
-                                atRestEffect: WidgetRestingEffects.swing(),
-                                child: Image.asset(
-                                  'assets/images/notification.png',
-                                  height: 40,
-                                  //  color: Get.appColors.primaryText,
-                                ),
+                              child: Image.asset(
+                                'assets/images/notification.png',
+                                height: 40,
+                                //  color: Get.appColors.primaryText,
                               ),
                             ),
                           ),

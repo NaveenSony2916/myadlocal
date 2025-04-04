@@ -150,15 +150,10 @@ class CompaignScreen extends StatelessWidget {
                                 ),
                                 InkWell(
                                   onTap: () {},
-                                  child: WidgetAnimator(
-                                    incomingEffect:
-                                        WidgetTransitionEffects.incomingSlideInFromBottom(),
-                                    atRestEffect: WidgetRestingEffects.swing(),
-                                    child: Image.asset(
-                                      'assets/images/mangaeCam.png',
-                                      height: 50,
-                                      //  color: Get.appColors.primaryText,
-                                    ),
+                                  child: Image.asset(
+                                    'assets/images/mangaeCam.png',
+                                    height: 50,
+                                    //  color: Get.appColors.primaryText,
                                   ),
                                 ),
                               ],
